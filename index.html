@@ -5,15 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Paradise</title>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300&family=Poppins:wght@300;500&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
 	</head>
 	<body>
-		<!-- Link original: https://impreza25.us-themes.com/-->
+		<!-- Link original: https://impreza25.us-themes.com-->
 
 		<header>
-			<div>
-				<div>
-					<nav>
-						<ul>
+			<div class="header-conteudo">
+				<div class="menus">
+					<nav class="nav">
+						<ul class="nav-menu">
 							<li>
 								<a href="">Hotel</a>
 							</li>
@@ -27,12 +37,14 @@
 								<a href="">Contact</a>
 							</li>
 						</ul>
-						<button>E</button>
+						<button id="btn-hamburger">
+							<span class="btn-hamburger"></span>
+						</button>
 					</nav>
 
-					<div>
+					<div class="menu-idioma">
 						<a href="">EN</a>
-						<div>
+						<div class="sub-menu">
 							<a href="">FR</a>
 							<a href="">DS</a>
 							<a href="">ES</a>
@@ -40,12 +52,15 @@
 					</div>
 				</div>
 
-				<div>
-					<a href="">LOGO</a>
+				<div class="logo">
+					<a href="">PARADISE</a><br>
+					<a href="">Design Hotel</a>
 				</div>
 				
 				<div>
-					<a href="">HOT CALL</a>
+					<a href="" class="btn">
+						<span>HOT CALL</span>
+					</a>
 				</div>	
 			</div>
 		</header>
@@ -211,5 +226,7 @@
 				<p>© <a href="">Impreza Theme</a> by UpSolution</p>
 			</div>
 		</footer>
+
+		<script src="index.js"></script>
 	</body>
 </html>

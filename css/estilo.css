@@ -1,0 +1,190 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+}
+
+
+p, span {
+	font-family: 'Rubik', sans-serif;
+}
+
+/*Header*/
+
+header {
+	border: 1px solid red;
+	background: red;
+	font-family: 'Cormorant', serif;
+}
+
+.header-conteudo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menus {
+	display: flex;
+	position: relative;
+	border: 1px solid white;
+}
+
+/*Nav-Menu*/
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-menu {
+	position: fixed;
+	background: white;
+	top: 0;
+	left: 0; 
+	bottom: 0;
+	width: 270px;
+	padding: 20px;
+	z-index: 5;
+	transform: translateX(-100%);
+	transition: .5s;
+}
+
+.nav.active .nav-menu {
+	transform: translateX();
+}
+
+.nav-menu li a {
+	display: block;
+	font-size: 34px;
+	color: black;
+	padding: 18px 10px;
+	font-weight: 500;
+}
+
+.menu-idioma {
+	border: 1px solid blue;
+	position: relative;
+	background: transparent;
+	padding: 5px 0;
+	margin-left: 5px;
+}
+
+.menu-idioma a {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 300;
+	display: block;
+	color: white;
+	padding: 3px 15px;
+}
+
+.menu-idioma .sub-menu {
+	display: none;
+	position: absolute;
+}
+
+.menu-idioma .sub-menu a{
+	color: black;
+}
+
+/*Logo*/
+
+.logo {
+	border: 1px solid red;
+	text-align: center;
+}
+
+.logo a:first-child {
+	font-size: 34px;
+	color: white;
+}
+
+.logo a:last-child {
+	font-size: 18px;
+	color: white;
+}
+
+/*Botões*/
+
+.btn {
+	border: 1px solid white;
+	color: white;
+	display: block;
+	padding: 10px 25px;
+	position: relative;
+}
+
+.btn:after {
+	width: calc(100% + 2px);
+	height: 0;
+	background: black;
+	position: absolute;
+	content: '';
+	left: -1px;
+	top: -1px;
+	transition: .3s linear;
+}
+
+.btn span {
+	z-index: 3;
+	position: relative;
+	font-size: 13px;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+.btn:hover:after  {
+	height: calc(100% + 2px);
+}
+
+.nav button {
+	border: 1px solid blue;
+	width: 50px;
+	height: 37px;
+	padding: 10px;
+	display: flex;
+	cursor: pointer;
+	background: transparent;
+	position: relative;
+}
+
+.btn-hamburger {
+	content: '';
+	display: block;
+	width: 28px;
+	height: 2px;
+	background: black;
+	position: relative;
+	top: 7px;
+}
+
+.btn-hamburger:before {
+	display: block;
+	content: '';
+	width: 28px;
+	height: 2px;
+	background: blue;
+	position: relative;
+	top: -9px;
+	transition: top .3s;
+}
+
+.btn-hamburger:after {
+	display: block;
+	content: '';
+	width: 28px;
+	height: 2px;
+	background: white;
+	position: relative;
+	top: 7px;
+	transition: .3s;
+}
+
+.nav.active .btn-hamburger:before {
+	top: 0;
+	transition-delay: .3s;
+	transition-property: transform;
+	transform: rotate(135deg);
+}
