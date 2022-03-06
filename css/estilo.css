@@ -12,24 +12,31 @@ p, span {
 	font-family: 'Rubik', sans-serif;
 }
 
+h1 {
+	font-family: 'Cormorant', serif;
+}
+
 /*Header*/
 
 header {
-	border: 1px solid red;
-	background: red;
+	background: transparent;
 	font-family: 'Cormorant', serif;
+	z-index: 2;
+	position: relative;
 }
 
 .header-conteudo {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 80px;
+	/*height 130px*/
+	padding: 0 15px;
 }
 
 .menus {
 	display: flex;
 	position: relative;
-	border: 1px solid white;
 }
 
 /*Nav-Menu*/
@@ -47,13 +54,13 @@ header {
 	bottom: 0;
 	width: 270px;
 	padding: 20px;
-	z-index: 5;
+	z-index: 1000;
 	transform: translateX(-100%);
 	transition: .5s;
 }
 
 .nav.active .nav-menu {
-	transform: translateX();
+	transform: translateX(0);
 }
 
 .nav-menu li a {
@@ -68,41 +75,96 @@ header {
 	border: 1px solid blue;
 	position: relative;
 	background: transparent;
-	padding: 5px 0;
+	padding: 0px 0;
 	margin-left: 5px;
+	transition: .1s;
+	width: 80px;
+	display: none;
 }
 
-.menu-idioma a {
+.menu-idioma.active {
+	background: white;
+}
+
+.menu-idioma .btn-idioma {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	transition: .3s;
+}
+
+.menu-idioma.active .btn-idioma {
+	background: white;
+	color: black;
+}
+
+.menu-idioma a, .menu-idioma .btn-idioma {
 	font-family: 'Rubik', sans-serif;
 	font-weight: 300;
 	display: block;
 	color: white;
-	padding: 3px 15px;
+	padding: 5px 15px;
+	cursor: pointer;
+	text-align: left;
+	font-size: 17px;
 }
 
 .menu-idioma .sub-menu {
-	display: none;
+	width: 100%;
 	position: absolute;
+	background: white;
+	visibility: hidden;
+	overflow-y: hidden;
+	transition: .5s;
+	height: 0;
+	opacity: 0;
 }
 
-.menu-idioma .sub-menu a{
+.menu-idioma.active .sub-menu {
+	visibility: visible;
+	opacity: 1;
+	height: 100px;
+}
+
+.menu-idioma .sub-menu a {
 	color: black;
+}
+
+.menu-idioma .seta {
+	position: relative;
+	border: 2px solid;
+	width: 9px;
+	height: 9px;
+	content: '';
+	display: inline-block;
+	border-color: transparent transparent white white;
+	border-radius: 1px;
+	transform: rotate(-45deg);
+	top: -3px;
+	left: 5px;
+	transition: .3s;
+}
+
+.menu-idioma.active .seta {
+	border-color: transparent transparent black black;
 }
 
 /*Logo*/
 
 .logo {
-	border: 1px solid red;
 	text-align: center;
+	order: -1;
 }
 
 .logo a:first-child {
-	font-size: 34px;
+	font-size: 24px;
+	/*font-size: 34px;*/
 	color: white;
 }
 
 .logo a:last-child {
-	font-size: 18px;
+	font-size: 17px;
+	/*font-size: 18px;*/
 	color: white;
 }
 
@@ -111,7 +173,7 @@ header {
 .btn {
 	border: 1px solid white;
 	color: white;
-	display: block;
+	display: inline-block;
 	padding: 10px 25px;
 	position: relative;
 }
@@ -140,7 +202,6 @@ header {
 }
 
 .nav button {
-	border: 1px solid blue;
 	width: 50px;
 	height: 37px;
 	padding: 10px;
@@ -148,43 +209,111 @@ header {
 	cursor: pointer;
 	background: transparent;
 	position: relative;
+	justify-content: center;
 }
 
 .btn-hamburger {
 	content: '';
 	display: block;
-	width: 28px;
+	width: 25px;
 	height: 2px;
-	background: black;
+	background: white;
 	position: relative;
 	top: 7px;
+	transition: .2s;
+}
+
+.nav.active .btn-hamburger {
+	background: transparent;
 }
 
 .btn-hamburger:before {
 	display: block;
 	content: '';
-	width: 28px;
+	width: 25px;
 	height: 2px;
-	background: blue;
+	background: white;
 	position: relative;
 	top: -9px;
-	transition: top .3s;
+	transition: top .2s, transform .2s;
+	transition-property: top, transform;
+	transition-delay: .3s, 0s;
+	transform: rotate(0);
+}
+
+.nav.active .btn-hamburger:before {
+	top: 0px;
+	transition: top .2s, transform .2s;
+	transition-property: top, transform;
+	transition-delay: 0s, .3s;
+	transform: rotate(135deg);
 }
 
 .btn-hamburger:after {
 	display: block;
 	content: '';
-	width: 28px;
+	width: 25px;
 	height: 2px;
 	background: white;
 	position: relative;
 	top: 7px;
-	transition: .3s;
+	transition: top .1s, transform .1s;
+	transition-property: top, transform;
+	transition-delay: .3s, 0s;
+	transform: rotate(0);
 }
 
-.nav.active .btn-hamburger:before {
-	top: 0;
-	transition-delay: .3s;
-	transition-property: transform;
-	transform: rotate(135deg);
+.nav.active .btn-hamburger:after {
+	top: -2px;
+	transition: top .2s, transform .2s;
+	transition-property: top, transform;
+	transition-delay: 0s, .3s;
+	transform: rotate(-135deg);
+}
+
+.call {
+	display: none;
+}
+
+/*Home*/
+
+.secao-home {
+	background-image: url(../imagens/home-bg.jpg);
+	background-position: center;
+	position: relative;
+	top: -80px;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.conteudo-home {
+	display: block;
+}
+
+.conteudo-home h1 {
+	font-size: 70px;
+	font-weight: 400;
+	color: white;
+	line-height: 100px;
+	margin-bottom: 40px;
+}
+
+.btn-home {
+	padding: 15px 35px;
+	background: white;
+	color: black;
+	position: relative;
+	z-index: 1;
+}
+.btn-home span {
+	font-size: 15px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	position: relative;
+}
+
+.btn-home:hover span {
+	color: white;
 }
