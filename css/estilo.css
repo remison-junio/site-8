@@ -7,14 +7,17 @@
 	border: none;
 }
 
-
 p, span {
 	font-family: 'Rubik', sans-serif;
 	color: #151515;
 }
 
-h1, h2, h3, h4, input {
+h1, h2, h3, h4, input, .titulo span {
 	font-family: 'Cormorant', serif;
+}
+
+.container {
+	padding: 0 25px;
 }
 
 /*Header*/
@@ -32,7 +35,7 @@ header {
 	align-items: center;
 	height: 80px;
 	/*height 130px*/
-	padding: 0 15px;
+	padding-left: 15px;
 }
 
 .menus {
@@ -73,7 +76,6 @@ header {
 }
 
 .menu-idioma {
-	border: 1px solid blue;
 	position: relative;
 	background: transparent;
 	padding: 0px 0;
@@ -116,7 +118,7 @@ header {
 	background: white;
 	visibility: hidden;
 	overflow-y: hidden;
-	transition: .5s;
+	transition: .3s;
 	height: 0;
 	opacity: 0;
 }
@@ -124,7 +126,7 @@ header {
 .menu-idioma.active .sub-menu {
 	visibility: visible;
 	opacity: 1;
-	height: 100px;
+	height: 94px;
 }
 
 .menu-idioma .sub-menu a {
@@ -161,12 +163,17 @@ header {
 	font-size: 24px;
 	/*font-size: 34px;*/
 	color: white;
+	display: block;
+	margin-bottom: -2px;
+	
 }
 
 .logo a:last-child {
 	font-size: 17px;
 	/*font-size: 18px;*/
 	color: white;
+	display: block;
+	margin-bottom: -5px;
 }
 
 /*Botões*/
@@ -175,7 +182,7 @@ header {
 	border: 1px solid white;
 	color: white;
 	display: inline-block;
-	padding: 10px 25px;
+	padding: 12px 35px;
 	position: relative;
 	z-index: 1;
 }
@@ -198,6 +205,7 @@ header {
 	font-size: 13px;
 	letter-spacing: 1px;
 	font-weight: 300;
+	color: white;
 }
 
 .btn:hover:after  {
@@ -210,7 +218,7 @@ header {
 	padding: 10px;
 	display: flex;
 	cursor: pointer;
-	background: red;
+	background: transparent;
 	position: relative;
 	justify-content: center;
 	z-index: 50;
@@ -276,11 +284,12 @@ header {
 }
 
 .btn-gerais {
-	padding: 15px 35px;
+	padding: 17px 40px;
 }
 
 .btn-gerais span {
 	font-size: 15px;
+	color: #151515;
 }
 
 .btn-gerais:hover span {
@@ -300,20 +309,22 @@ header {
 	top: -80px;
 	background-size: cover;
 	height: 100vh;
-	display: flex;
+	display: grid;
 	align-items: center;
+	margin-bottom: -80px;
 }
 
 .conteudo-home {
-	display: block;
+	display: grid;
 }
 
 .conteudo-home h1 {
 	font-size: 70px;
 	font-weight: 400;
 	color: white;
-	line-height: 100px;
-	margin-bottom: 40px;
+	line-height: 75px;
+	margin-bottom: 35px;
+	letter-spacing: -1.5px;
 }
 
 .secao-home .btn-gerais {
@@ -337,7 +348,8 @@ header {
 	font-weight: 400;
 	color: #151515;
 	line-height: 60px;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
+	letter-spacing: -1.5px;
 }
 
 .secao-3 .titulo, .secao-5 .titulo {
@@ -360,20 +372,34 @@ header {
 
 .secao-1 .conteudo-gerais {
 	display: grid;
-	grid-row-gap: 100px;
+	grid-row-gap: 80px;
 }
 
 .secao-1  {
 	border: 1px solid red;
+	padding-top: 100px;
 }
 
 .secao-1 .titulo {
 	text-align: right;
 }
 
+.secao-1 .conteudo-gerais p {
+	max-width: 410px;
+}
+
+.secao-1 .conteudo-img {
+	border: 1px solid red;
+	padding-top: 20px;
+}
+
 .secao-1 .conteudo-img img {
-	width: 280px;
+	width: 100%;
+	max-width: 280px;
 	margin-left: 60px;
+	/*box-shadow: 30px -60px pink, 30px 60px green, -60px 60px red, -60px -60px blue;*/
+	position: relative;
+	z-index: -1;
 }
 
 /*Seção 2*/
@@ -398,15 +424,21 @@ header {
 	margin-left: 60px;
 }
 
+.secao-2 .conteudo-img {
+	border: 1px solid red;
+	padding-right: 48px;
+}
+
 .secao-2 .conteudo-img img {
-	width: 390px;
+	width: 100%;
+	max-width: 599px;	
 }
 
 /*Seção 3*/
 
 .secao-3 img {
 	width: 100%;
-	height: 160px;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -414,6 +446,9 @@ header {
 	border: 1px solid red;
 	text-align: center;
 	padding: 0 15px;
+	max-width: 550px;
+	margin: auto;
+	margin-top: 50px;
 }
 
 /*Seção 4*/
@@ -740,4 +775,192 @@ header {
 	background: white;
 	position: absolute;
 	right: 1px;
+}
+
+@media (min-width: 600px) {
+
+	.container {
+		padding: 0 40px;
+	}
+
+	/*Header*/
+
+	.header-conteudo {
+		padding-left: 10px;
+		padding-right: 25px;
+	}
+
+	/*Logo*/
+
+	.nav button {
+		order: 1;	
+	}
+	.menu-idioma {
+		display: block;
+	}
+
+	.logo {
+		text-align: center;
+		order: 2;
+	}
+
+	.logo a:first-child {
+		font-size: 34px;
+		margin-bottom: -2px;	
+	}
+
+	.logo a:last-child {
+		font-size: 18px;
+	}
+
+	.call {
+		order: 3;
+		display: block;
+	}
+
+	/*Gerais*/
+
+	.titulo {
+		font-size: 52px;
+		line-height: 50px;
+	}
+
+	/*Home*/
+
+	.conteudo-home h1 {
+		font-size: 66px;
+	}
+
+	/*Seção 1*/
+
+	.secao-1 .conteudo-img img {
+		max-width: 450px;
+		margin-left: 55px;
+	}
+
+	/*Seção 2*/
+
+	.secao-2 .conteudo-gerais p {
+		width: 410px;
+		margin-left: 130px;
+	}
+}
+
+@media (min-width: 767px) {
+
+	/*Home*/
+
+	.conteudo-home {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.home-texto {
+		grid-column: 2;
+	}
+
+	/*Seção 1*/
+
+	.secao-1 .conteudo-gerais, .secao-2 .conteudo-gerais {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.secao-1 .conteudo-img {
+		padding-left: 51px;
+	}
+
+	.secao-1 .conteudo-img img {
+		margin-left: 0;
+	}
+
+	/*Seção 2*/
+
+	.secao-2 .conteudo-gerais p {
+		width: auto;
+		max-width: 410px;
+	}
+
+	.secao-2 .conteudo-img {
+		grid-column: 1;
+		grid-row: 1;
+		
+	}
+
+	.secao-2 .conteudo-img img {
+		display: flex;
+		border: 1px solid red;
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 920px) {
+
+	/*Gerais*/
+
+	.titulo {
+		font-size: 60px;
+		line-height: 60px;
+	}
+
+	/*Home*/
+
+	.conteudo-home h1 {
+		font-size: 75px;
+		line-height: 80px;
+		margin-bottom: 40px;
+	}
+}
+
+@media (min-width: 1025px) {
+
+	/*Gerais*/
+
+	.titulo {
+		font-size: 70px;
+		line-height: 70px;
+	}
+
+	/*Home*/
+
+	.conteudo-home h1 {
+		font-size: 80px;
+		line-height: 90px;
+		margin-bottom: 70px;
+	}
+}
+
+@media (min-width: 1281px) {
+
+	/*Gerais*/
+
+	.titulo {
+		font-size: 75px;
+		line-height: 75px;
+	}
+
+	/*Header*/
+
+	.header-conteudo {
+		height: 130px;
+	}
+
+	/*Home*/
+
+	.secao-home {
+		background-image: url(../imagens/home-bg.jpg);
+		top: -130px;
+		margin-bottom: -130px;
+	}
+
+	.conteudo-home h1 {
+		font-size: 95px;
+		line-height: 105px;
+		margin-bottom: 70px;
+	}
+
+	/*Seção 2*/
+
+	.secao-2 .titulo span {
+		display: block;
+	}
 }
