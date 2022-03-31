@@ -58,13 +58,22 @@ $(document).ready(function(){
 	    }
 	})
 
-	$('.btn-right').click(function() {
+	$('.btn-right').click(() => {
 	    owl.trigger('next.owl.carousel');
 	})
 
-	$('.btn-left').click(function() {
+	$('.btn-left').click(() => {
 	    owl.trigger('prev.owl.carousel');
 	})
-
 })
 
+//Topo
+
+$(window).scroll(()=> {
+	let distancia = $('.secao-1').offset().top - $(window).scrollTop();
+
+	if(distancia <= 0) $('footer .ao-topo').addClass('active')
+	else $('footer .ao-topo').removeClass('active')
+})
+
+$('.ao-topo').click(()=> $('html, body').animate({scrollTop:0}, 'slow'));
