@@ -40,7 +40,7 @@ btnRedes.forEach((item, indice) => {
 
 //Carousel
 
-$(document).ready(function(){
+$(document).ready(()=> {
 
 	const owl = $('.owl-carousel');
 

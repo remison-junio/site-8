@@ -339,10 +339,6 @@ header {
 	padding-bottom: 20px;
 }
 
-.gerais-textos {
-	border: 1px solid red;
-}
-
 .titulo {
 	font-size: 65px;
 	font-weight: 400;
@@ -375,10 +371,6 @@ header {
 	grid-row-gap: 80px;
 }
 
-.secao-1  {
-	border: 1px solid red;
-}
-
 .secao-1 .titulo {
 	text-align: right;
 }
@@ -402,10 +394,6 @@ header {
 
 /*Seção 2*/
 
-.secao-2 {
-	border: 1px solid red;
-}
-
 .secao-2 .conteudo-gerais {
 	display: grid;
 	grid-row-gap: 20px;
@@ -417,13 +405,11 @@ header {
 
 .secao-2 .conteudo-gerais p {
 	font-weight: 400;
-	border: 1px solid red;
 	width: 310px;
 	margin-left: 60px;
 }
 
 .secao-2 .conteudo-img {
-	border: 1px solid red;
 	padding-right: 48px;
 }
 
@@ -433,10 +419,6 @@ header {
 }
 
 /*Seção 3*/
-
-.secao-3 {
-	border: 1px solid red;
-}
 
 .secao-3 img {
 	width: 100%;
@@ -478,7 +460,6 @@ header {
 }
 
 .secao-4 img {
-	border: 1px solid red;
 	height: 100%;
 	max-height: 340px;
 	width: 100%;
@@ -503,7 +484,6 @@ header {
 }
 
 .secao-4 .btn-left, .secao-4 .btn-right {
-	border: 1px solid red;
 	position: absolute;
 	display: none;
 	top: 62%;
@@ -642,7 +622,6 @@ header {
 	color: #151515;
 	text-align: center;
 	padding-top: 40px;
-	border: 1px solid blue;
 }
 
 .footer .contatos div {
@@ -696,7 +675,6 @@ header {
 
 .redes-sociais {
 	display: flex;
-	border: 1px solid red;
 	justify-content: center;
 }
 
@@ -937,7 +915,6 @@ header {
 
 	.secao-2 .conteudo-img img {
 		display: flex;
-		border: 1px solid red;
 		margin-left: auto;
 	}
 
@@ -956,7 +933,6 @@ header {
 
 	.secao-6 .titulo {
 		grid-column: 2 / 3;
-		border: 1px solid red;
 	}
 
 	/*Seção 7*/
@@ -1051,8 +1027,7 @@ header {
 	}
 
 	.card div {
-		order: -1;	
-		border: 1px solid blue;
+		order: -1;
 		padding: 60px 0 0 90px;
 		height: 500px;
 	}
@@ -1068,16 +1043,13 @@ header {
 	.secao-4 .conteudo-gerais {
 		max-width: 100%;
 		margin: 0 auto;
-		border: 1px solid red;
 	}
 
 	.secao-4 .link-img {
 		height: 100%;
-		background: red;
 	}
 
 	.secao-4 img {
-		border: 1px solid red;
 		height: 100%;
 		max-height: 500px;
 		width: 100%;
