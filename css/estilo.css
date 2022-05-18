@@ -56,7 +56,7 @@ header {
 	top: 0;
 	left: 0; 
 	bottom: 0;
-	width: 270px;
+	width: calc(100% - 50px);
 	padding: 20px;
 	z-index: 1000;
 	transform: translateX(-100%);
@@ -381,12 +381,12 @@ header {
 
 .secao-1 .conteudo-img {
 	padding-top: 20px;
+	padding-left: 60px;
 }
 
 .secao-1 .conteudo-img img {
 	width: 100%;
 	max-width: 280px;
-	margin-left: 60px;
 	/*box-shadow: 30px -60px pink, 30px 60px green, -60px 60px red, -60px -60px blue;*/
 	position: relative;
 	z-index: -1;
@@ -405,7 +405,7 @@ header {
 
 .secao-2 .conteudo-gerais p {
 	font-weight: 400;
-	width: 310px;
+	max-width: 310px;
 	margin-left: 60px;
 }
 
@@ -776,6 +776,12 @@ header {
 	background: white;
 	position: absolute;
 	right: 1px;
+}
+
+@media (min-width: 320px) {
+	.nav-menu {
+		width: 270px;
+	}
 }
 
 @media (min-width: 600px) {
