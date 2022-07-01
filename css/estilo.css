@@ -12,7 +12,7 @@ p, span {
 	color: #151515;
 }
 
-h1, h2, h3, h4, input, .titulo span {
+h1, h2, h3, h4, input, .titulo span, .logo-link span {
 	font-family: 'Cormorant', serif;
 }
 
@@ -59,6 +59,7 @@ header {
 	width: calc(100% - 50px);
 	padding: 20px;
 	z-index: 1000;
+	height: 100vh;
 	transform: translateX(-100%);
 	transition: .5s;
 }
@@ -159,7 +160,7 @@ header {
 	order: -1;
 }
 
-.logo a:first-child {
+.logo .logo-link .logo-1 {
 	font-size: 24px;
 	/*font-size: 34px;*/
 	color: white;
@@ -168,7 +169,7 @@ header {
 	
 }
 
-.logo a:last-child {
+.logo .logo-link .logo-2 {
 	font-size: 17px;
 	/*font-size: 18px;*/
 	color: white;
@@ -309,6 +310,7 @@ header {
 	top: -80px;
 	background-size: cover;
 	height: 100vh;
+	min-height: 460px;
 	display: grid;
 	align-items: center;
 	margin-bottom: -80px;
@@ -340,7 +342,7 @@ header {
 }
 
 .titulo {
-	font-size: 65px;
+	font-size: 55px;
 	font-weight: 400;
 	color: #151515;
 	line-height: 60px;
@@ -668,11 +670,6 @@ header {
 	color: #151515;
 }
 
-.footer .copy a {
-	color: 9000E9;
-	font-weight: 400;
-}
-
 .redes-sociais {
 	display: flex;
 	justify-content: center;
@@ -811,12 +808,12 @@ header {
 		order: 2;
 	}
 
-	.logo a:first-child {
+	.logo .logo-link .logo-1 {
 		font-size: 34px;
 		margin-bottom: -2px;	
 	}
 
-	.logo a:last-child {
+	.logo .logo-link .logo-2 {
 		font-size: 18px;
 	}
 

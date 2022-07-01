@@ -2,13 +2,28 @@ const nav = document.querySelector('.nav');
 
 const btnHamburger = document.querySelector('#btn-hamburger');
 
-btnHamburger.addEventListener('click', ()=> {
-	nav.classList.toggle('active');
-})
+const main = document.querySelector('main')
+const footer = document.querySelector('footer')
 
-btnHamburger.addEventListener('blur', ()=> {
-	nav.classList.remove('active');
-})
+btnHamburger.addEventListener('click', abrirFecharMenu)
+
+function abrirFecharMenu() {
+	if(nav.classList.contains('active')) {
+		nav.classList.remove('active')
+		removeEventoClick(main, footer)
+	} else {
+		nav.classList.add('active')
+		addEventoClick(main, footer)
+	}
+}
+
+function addEventoClick(...itens) {
+	itens.forEach(item => item.addEventListener('click', abrirFecharMenu))
+}
+
+function removeEventoClick(...itens) {
+	itens.forEach(item => item.removeEventListener('click', abrirFecharMenu))
+}
 
 const menuIdioma = document.querySelector('.menu-idioma');
 const btnIdioma = document.querySelector('.btn-idioma');
